@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpot/Cadastro</title>
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .header {
+        padding: 10px 16px;
+        background:rgba(144, 112, 112, 0);
+        color: #f1f1f1;
+        }
+    </style>
+
+</head>
+
+<body style=" background-image: url(fundo_paisagem1.jpg);">
+    <style>
+        body {
+            background-attachment: fixed;
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+     }
+    </style>
+
+<div class="header" id="menu" style="height: 135px; ">    
+    <div style="float: left; width: 100px; height: 1px;"></div><div style="text-align: left;">
+        <a href="index.html">
+            <img style="width: 100px; float: left;" src="ícone.png"></div><br><br> <div style="float: left; width: 80px; height: 1px;">
+        </a>
+    </div>
+    
+    <div style="color: white; float: left; width: 220px; height: 1px;">
+        <a href="index.html">
+            <img id="home_img" onmouseover="cresce_home()" style="height: 50px;" src="Home.png">
+        </a>
+    </div>
+    
+    <div style="color: white; float: left; width: 220px; height: 1px;">
+        <a href="SERVICES.html">
+            <img id="services_img" onmouseover="cresce_services()" style="height: 50px;" src="Services.png">
+        </a>
+    </div>
+    
+    <div style="color: white; float: left; width: 240px; height: 1px;"> 
+        <a href="Calc.html">
+            <img id="product_img" onmouseover="cresce_products()" style="height: 53px;" src="Calculator.png">
+        </a>
+    </div>
+    <div style="float: right; width: 350px; height: 1px;">
+        <a href="TELA_CADASTRO.html">
+            <img id="img_signup" onmouseover="cresce_signup()" style="height: 75px;" src="signup.png">
+        </a>
+    </div> 
+
+</div>
+
+<br><br><br><br><br><br>    
+
+<div id="inputs_cadastro" style="text-align: center;">
+    <center><h2 style="text-align: center; color: white; font-size: 150%;">Insira seus dados nos campos abaixo:</h2>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="text" placeholder="Nome completo"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="text" onkeypress="$(this).mask('00/00/0000')" placeholder="Data de Nascimento"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="text" onkeypress="$(this).mask('000.000.000-00')" placeholder="Digite seu CPF"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="number" onkeypress="$(this).mask('00000000000')" placeholder="Digite o número CNH"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="text" placeholder="Endereço de E-Mail"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="text" onkeypress="$(this).mask('00+ (00) 00000-0000')" placeholder="55+ (11)..."></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="password" placeholder="Digite sua senha"></div><br><br>
+    <div class="form-group col-md-4">
+    <input class="form-control" style="text-align: center; width: 50%;" type="password" placeholder="Confirme sua senha"></div></center><br><br>
+    <button onclick="button_cadastro2()" style="width: 7%;">Próximo</button>
+</div>
+
+<br><br><br><br>
+
+<div id="div_def" style="text-align: center; display: none;"><br><br><br>
+    <h2 style="color: white;">Possui alguma deficiência?</h2>
+    <span style="color: white; font-size: 140%;">SIM</span> <input onclick="sim_def()" name="rdbGender" id="rdbGender" style="text-align: center; width: 20px; height: 20px;" type="radio">
+    <span style="color: white; font-size: 140%;">NÃO</span> <input onclick="nao_def()" name="rdbGender" id="rdbGender" style="text-align: center; width: 20px; height: 20px;" type="radio"><br><br>
+        <div id="Input_Def" style="text-align: center; display: none">
+            <center><div class="form-group col-md-4">
+            <input class="form-control" style="text-align: center; width: 50%;" type="text" placeholder="Tipo de deficiência"></div></center><br><br>
+            <center><div class="form-group col-md-4">
+            <input class="form-control" style="text-align: center; width: 50%;" type="text" onkeypress="$(this).mask('000.000.000-0')" placeholder="Número do INSS"></div></center><br><br>
+        </div>
+    <a href="Mensagem_cadastro_Realizado.html"><button style="width: 7%;">Cadastrar</button><br><br></a>
+    <button onclick="Voltar_cadastro1()" style="width: 6%;">Voltar</button>
+    <a href="TELA_CADASTRO.html"><button style="width: 10%;">Cancelar cadastro</button></a>
+
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div style="background-color:rgba(98, 99, 100, 0.897); height: 112px; text-align:right; background-attachment: fixed; ">
+    <br>
+        
+        <div style="width: 20%; height: 1px;"> 
+            <a href="https://www.instagram.com/my.spot_/?hl=pt-br">
+                <img id="img_insta" onmouseover="insta_grande()" src="insta.png" style="height: 60px">
+            </a> 
+        </div>  
+        
+        <div style="width: 40%; height: 1px;">
+            <a href="https://www.facebook.com/My-Spot-103935477897078/?modal=admin_todo_tour">
+                <img id="img_face" onmouseover="face_grande()" src="face.png" style="height: 62px;">
+            </a>
+        </div> 
+    
+        <div style="width: 60%; height: 1px;"> 
+            <a href="https://github.com/MySpotSP">
+                <img id="img_github" onmouseover="github_grande()" src="github.png" style="height: 60px;">
+            </a>
+        </div> 
+        
+        <div style="width: 80%; height: 1px;">
+            <a href="https://twitter.com/MySpot12">
+                <img id="img_twt" onmouseover="twt_grande()" src="twt.png" style="height: 60px;">
+            </a>
+        </div>
+
+
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+function cresce_signup() {
+    img_signup.style.height = '85px'
+    home_img.style.height = '50px'
+    services_img.style.height = '50px'
+    product_img.style.height = '50px'
+}
+
+function cresce_home() {
+    home_img.style.height = '65px'
+    services_img.style.height = '50px'
+    product_img.style.height = '50px'
+    img_signup.style.height = '75px'
+}
+
+function cresce_services() {
+    home_img.style.height = '50px'
+    services_img.style.height = '65px'
+    product_img.style.height = '50px'
+    img_signup.style.height = '75px'
+}
+
+function cresce_products() {
+    home_img.style.height = '50px'
+    services_img.style.height = '50px'
+    product_img.style.height = '65px'
+    img_signup.style.height = '75px'
+}
+
+function Voltar_cadastro1() {
+    inputs_cadastro.style.display = 'block'
+    Input_Def.style.display = 'none'
+    div_def.style.display = 'none'
+}
+
+function button_cadastro2() {
+    inputs_cadastro.style.display = 'none'
+    div_def.style.display = 'block'
+}
+
+function insta_grande() {
+    img_insta.style.height = '70px'
+    img_face.style.height = '62px'
+    img_github.style.height = '60px'
+    img_twt.style.height = '60px'
+}
+
+function face_grande() {
+    img_insta.style.height = '60px'
+    img_face.style.height = '74px'
+    img_github.style.height = '60px'
+    img_twt.style.height = '60px'
+}
+
+function github_grande() {
+    img_insta.style.height = '60px'
+    img_face.style.height = '62px'
+    img_github.style.height = '70px'
+    img_twt.style.height = '60px'
+}
+
+function twt_grande() {
+    img_insta.style.height = '60px'
+    img_face.style.height = '62px'
+    img_github.style.height = '60px'
+    img_twt.style.height = '70px'
+}
+
+function sim_def() {
+    Input_Def.style.display = 'block'
+}
+
+function nao_def() {
+    Input_Def.style.display = 'none'
+}
+
+window.onscroll = function() {fmenu()};
+
+var header = document.getElementById("menu");
+
+var sticky = header.offsetTop;
+
+function fmenu() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("'sticky'");
+  }
+}
+</script>

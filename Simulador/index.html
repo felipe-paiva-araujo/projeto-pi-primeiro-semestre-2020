@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulador Financeiro</title>
+</head>
+<body style="background-image: url(fundo.png);">
+    <center>
+        <h1>Simulador financeiro</h1>
+    </center>
+<br>
+<br><br><br>
+    <div id="div_form" style="float: right">
+    <b><spam>selecione a sua região:</spam></b>
+    <br>
+    <select id="regioes" name="regioes">
+            <option value="0.10">Sul</option>
+            <option value="0.10">Norte</option>
+            <option value="0.12">Leste</option>
+            <option value="0.15">Oeste</option>
+            <option value="0.20">centro</option>
+    </select>
+    <br>
+    <br>
+    <b><spam>Quantas vagas você opera nessa região?</spam></b>
+    <br>
+    <input id="num_vaga" style="border-left: 5px solid red; background-color:#ffb3b3; border-radius: 5px"> 
+    <br>
+    <br>
+    <b><spam>qual seu lucro médio mensal nessa região?</spam></b>
+    <br>
+    <input id="lucro" style="border-left: 5px solid red; background-color:#ffb3b3; border-radius: 5px">
+    <br>
+    <br>
+    <button onclick="calcula()" style="border-radius: 5px">Calcular</button>
+    </Div>
+    <br>
+    <br><br>
+    <div id="div_resposta" style="float: center">
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcula(){
+        var valor_poste = 15
+        var porcen_lucro = regioes.value * 100
+        var lucro_total = Number((lucro.value * regioes.value)) + Number(lucro.value)
+        var lucro_adi = lucro_total - lucro.value
+        var implante = valor_poste * num_vaga.value
+
+        div_resposta.innerHTML = 
+        "<b>=VALORES=</b>"+
+        "<br><br>"+
+        "Valor da implantação: R$ " + implante +
+        "<br>"+
+        "porcentagem de lucro adicional: " +porcen_lucro+"%" +
+        "<br>"+
+        "lucro total estimado: " + lucro_total +
+        "<br>"+
+        "lucro adicional estimado: " + lucro_adi
+        
+    }
+
+</script>
